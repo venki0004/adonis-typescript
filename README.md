@@ -1,19 +1,22 @@
-
 ## Installation
 
- requires [Node.js](https://nodejs.org/)  >= 14.15.4 and  [Npm](https://www.npmjs.com/)  >= 6.0.0 to run .
+requires [Node.js](https://nodejs.org/) >= 14.15.4 and [Npm](https://www.npmjs.com/) >= 6.0.0 to run .
 
 Install the AdonisJs with typescript by Following Commands and run the server in local.
+
 ```sh
 npm init adonis-ts-app@latest project-name
 cd project-name
 node ace serve --watch
 ```
+
 Install Lucid ORM for Database migrations and seed and configuation
+
 ```sh
 npm i @adonisjs/lucid
 node ace configure @adonisjs/lucid
 ```
+
 Open the env.ts file and paste the following code inside the Env.rules object.
 DB_CONNECTION: Env.schema.string(),
 
@@ -53,59 +56,72 @@ DB_CONNECTION: Env.schema.string(),
     ORACLE_USER: Env.schema.string(),
     ORACLE_PASSWORD: Env.schema.string.optional(),
     ORACLE_DB_NAME: Env.schema.string(),
-    
-    
+
 ## create Model with Migration
+
 ```sh
 node ace make:model User -m
 ```
 
-## run migation 
+## run migation
+
 ```sh
 node ace migation:run
 ```
-###  controller create command
+
+### controller create command
+
 ```sh
 node ace make:controller User
 ```
+
 ### Create Validator class
+
 ```sh
 node ace make:validator CreateUser
 ```
 
 ### Create Database Seeders
-``` sh
+
+```sh
 node ace make:seeder User
 ```
+
 ### run partucular seeders
-``` sh
+
+```sh
 node ace db:seed --files "./database/seeders/User.ts"
 ```
 
-
 ### Run all Seeders
-``` sh
+
+```sh
 node ace db:seed
 ```
+
 ### Run Interactive seeders only by selection
-``` sh
+
+```sh
 node ace db:seed -i
 ```
 
-
 ### Authentaion configuration
-``` sh
+
+```sh
 npm i @adonisjs/auth
 node ace configure @adonisjs/auth
 ```
+
 ### eslint auto fix
+
 ```sh
-npm run lint 
+npm run lint
 ```
 
 ### prettier format all files
-``` sh
-npm run format   
+
+```sh
+npm run format
 ```
 
 ### For production environments...

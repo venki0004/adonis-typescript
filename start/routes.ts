@@ -68,7 +68,13 @@ Route.post('login', async ({ auth, request, response }) => {
     return response.badRequest('Invalid credentials')
   }
   // Generate token
-  const token = await auth.use('api').generate(user, { expiresIn: '10'}
-  )
+  const token = await auth.use('api').generate(user, { expiresIn: '10' })
   return token
+})
+
+Route.post('/logout', async ({ auth }) => {
+  await auth.use('api').revoke()
+  return {
+    revoked: true,
+  }
 })
