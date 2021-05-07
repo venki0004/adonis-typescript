@@ -92,6 +92,12 @@ node ace db:seed
 node ace db:seed -i
 ```
 
+
+### Authentaion configuration
+``` sh
+npm i @adonisjs/auth
+node ace configure @adonisjs/auth
+```
 ### eslint auto fix
 ```sh
 npm run lint 
